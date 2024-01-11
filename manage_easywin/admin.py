@@ -3,6 +3,7 @@ from .import models
 
 @admin.register(models.Customer)
 class CustomerAdmin(admin.ModelAdmin):
+    autocomplete_fields = ['user']
     list_display=['first_name', 'last_name']
     list_per_page=10
     list_select_related=['user']
