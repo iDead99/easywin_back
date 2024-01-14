@@ -7,7 +7,7 @@ class Customer(models.Model):
     birth_date=models.DateField(null=True, blank=True)
     balance=models.DecimalField(max_digits=10, decimal_places=2, default=0)
     user=models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    check_box=models.CharField(max_length=10)
+    check_box=models.CharField(max_length=10, default='unchecked')
 
     def __str__(self) -> str:
         return f'{self.user.first_name} {self.user.last_name}'
