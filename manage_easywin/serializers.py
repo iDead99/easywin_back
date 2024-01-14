@@ -13,3 +13,9 @@ class UpdateBalanceSerializer(serializers.ModelSerializer):
     class Meta:
         model=models.Customer
         fields=['id', 'user_id', 'balance']
+
+class CheckBoxSerializer(serializers.ModelSerializer):
+    user_id=serializers.IntegerField(read_only=True)
+    class Meta:
+        model=models.Customer
+        fields=['id', 'user_id', 'check_box']
